@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+	<title>Gold Rush Angular</title>
+	<link rel="stylesheet" type="text/css" href="normal.css">
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.5/angular.min.js"></script>
+</head>
+<body ng-controller="mainController">
+	<div ng-click="mapClick($event)" class="map">
+		<img src="topo-co.jpg">
+	</div>
+	<div ng-repeat="object in points">
+		<img src="map_pin.png" height="35px" ng-style="{'top' : '{{object.yCoord}}px', 'left' : '{{object.xCoord}}px'}" class="point">
+		<!-- <p>xcoord: {{object.xCoord}} ycoord: {{object.yCoord}}</p> -->
+	</div>
+	<script type="text/javascript" src="main.js"></script>
+</body>
+</html>
