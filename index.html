@@ -10,10 +10,18 @@
 	<div ng-click="mapClick($event)" class="map">
 		<img src="topo-co.jpg">
 	</div>
-	<div ng-repeat="object in points">
-		<img src="map_pin.png" height="35px" ng-style="{'top' : '{{object.yCoord}}px', 'left' : '{{object.xCoord}}px'}" class="point">
-		<!-- <p>xcoord: {{object.xCoord}} ycoord: {{object.yCoord}}</p> -->
+		<div ng-repeat="object in points">
+			<img src="map_pin.png" height="35px" ng-style="{'top' : '{{object.yCoord}}px', 'left' : '{{object.xCoord}}px'}" class="point" ng-mouseenter="pointEnter(object.point)" ng-mouseleave="pointLeave()" ng-click="removePoint(object.point)">
+		</div>
+	<div ng-show="inputVisible" style="top : {{currentPoint.yCoord}}px; left : {{offsetYInput}}px" class="inputDiv">
+		<textarea class="inputArea" ng-model="noteText"></textarea>
+		<div class="btnSubmit" ng-click="submitNote()">
+			Submit
+		</div>
+	</div>
+	<div style="top : {{offsetY}}px; left : {{noteDisplay.xCoord}}px" class="noteDisplay" ng-show="noteVisible">
+		{{noteDisplay.note}}
 	</div>
 	<script type="text/javascript" src="main.js"></script>
 </body>
-</html>
+</html>	
