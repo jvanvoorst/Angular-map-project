@@ -15,9 +15,7 @@
 		</div>
 	<div ng-show="inputVisible" style="top : {{currentPoint.yCoord}}px; left : {{offsetYInput}}px" class="inputDiv">
 		<textarea class="inputArea" ng-model="noteText"></textarea>
-		<div class="btnSubmit" ng-click="submitNote()">
-			Submit
-		</div>
+		<button class="btnSubmit" ng-click="submitNote()">Submit</button>
 	</div>
 	<div style="top : {{offsetY}}px; left : {{noteDisplay.xCoord}}px" class="noteDisplay" ng-show="noteVisible">
 		{{noteDisplay.note}}

@@ -5,7 +5,7 @@ angular.module("myApp").controller("mainController", ["$scope", function($scope)
 	$scope.noteVisible = false;
 	
 	$scope.mapClick = function(event) {
-		$scope.currentPoint = $scope.createPoint($scope.clickNum, event.clientX, event.clientY);
+		$scope.currentPoint = $scope.createPoint($scope.clickNum, event.pageX, event.pageY);
 		$scope.offsetYInput = $scope.currentPoint.yCoord - 50;
 		$scope.inputVisible = true;
 		$scope.clickNum++;
@@ -27,7 +27,7 @@ angular.module("myApp").controller("mainController", ["$scope", function($scope)
 
 	$scope.pointEnter = function(point) {
 		$scope.noteDisplay = $scope.points[point];
-		$scope.offsetY = $scope.noteDisplay.yCoord - 50;
+		$scope.offsetY = $scope.noteDisplay.yCoord;
 		$scope.noteVisible = true;
 
 	}	

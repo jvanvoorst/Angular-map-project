@@ -12,13 +12,10 @@
     left: 200px;
 }
 .btnSubmit {
-	width: 95px;
-	height: 26px;
 	background-color: grey;
 	position: fixed;
 	top: 415px;
 	left: 202px;
-	text-align: center;
 	padding-top: 5px;	
     box-sizing: border-box;
     cursor: pointer;
